@@ -15,21 +15,13 @@ class String
   end
 
   def count_sentences
-    if self == "This, well, is a sentence. This is too!! And so is this, I think? Woo..." 
-      return 4
-    end
+    temp_array = []
     if self.include?(".") || self.include?("?") || self.include?("!")
-      final = []
-      sentences = []
-      sentences = self.split(".")
-      sentences.each_with_index do |sentence, index|
-        final[index] = sentence.split("?")
-      end
-      final.flatten!
-      final.each_with_index do |sentence, index|
-        final[index] = sentence.split("!")
-      end
-      final.flatten!.count      
+      temp_array = self.split(/\.|\?|\!/)
+      temp_array = temp_array.map {|element|
+        element.size > l
+        }
+      return temp_array.size
     else
       return 0 
     end
