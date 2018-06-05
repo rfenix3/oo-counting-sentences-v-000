@@ -24,7 +24,7 @@ class String
           final_array.push(element)
         end
         }
-      return temp_array.size
+      return final_array.size
     else
       return 0 
     end
