@@ -19,7 +19,7 @@ class String
     if self.include?(".") || self.include?("?") || self.include?("!")
       temp_array = self.split(/\.|\?|\!/)
       temp_array = temp_array.map {|element|
-        element.size > l
+        element if element.size > l
         }
       return temp_array.size
     else
