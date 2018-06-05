@@ -16,11 +16,12 @@ class String
 
   def count_sentences
     temp_array = []
+    final_array = []
     if self.include?(".") || self.include?("?") || self.include?("!")
       temp_array = self.split(/\.|\?|\!/)
-      temp_array = temp_array.map {|element|
+      temp_array = temp_array.each {|element|
         if element.size > 0 
-          element
+          final_array.push(element)
         end
         }
       return temp_array.size
